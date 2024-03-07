@@ -1,0 +1,26 @@
+.Navbar{
+    height: 60px;
+    top: 0;
+    position: fixed;
+    box-shadow: 0px 10px 10px -15px #111;
+    width: 100%;
+    .containerd{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .right-side{
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .banner{
+        font-family: "JetBrains Mono",monospace;
+        font-size: 26px;
+        color: rgb(66, 66, 115);
+    }
+}

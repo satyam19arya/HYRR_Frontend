@@ -1,0 +1,23 @@
+.Feed{
+    height: 91vh;
+    .containerd{
+        display: flex;
+        gap: 15px;
+        overflow: hidden;
+        height: 91vh;
+    }
+    .left-part{
+        flex: 2;
+        overflow-y: auto;
+    }
+
+    .right-part{
+        flex: 1;
+        margin-top: 12px;
+        overflow-y: hidden;
+    }
+
+    .suggestions{
+        margin-top: 28px;
+    }
+}

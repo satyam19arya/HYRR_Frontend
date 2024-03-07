@@ -1,13 +1,78 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+.containerd {
+  max-width: 950px;
+  margin-inline: auto;
+}
+
+.red_button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 11px;
+  color: white;
+  background-color: rgb(230, 97, 97);
+  border:none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition:all 100ms ease-out;
+}
+
+.red_button:hover{
+  background-color: rgb(225, 60, 60);
+}
+
+.blue_button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 11px;
+  color: white;
+  background-color: rgb(93, 175, 233);
+  border:none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition:all 100ms ease-out;
+}
+
+.blue_button:hover{
+  background-color:  rgb(53, 164, 244);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #212121;
+}
+
+h5{
+  color: #555;
+}
+
+p{
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.hover-link {
+  cursor: pointer;
 }

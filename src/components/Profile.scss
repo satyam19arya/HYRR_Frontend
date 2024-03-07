@@ -1,0 +1,65 @@
+.Profile{
+    height: 91vh;
+    .containerd{
+        display: flex;
+        gap: 20px;
+        height: 91vh;
+    }
+    .left-part{
+        flex: 2;
+        overflow-y: auto;
+    }
+
+    .right-part{
+        flex: 1;
+        margin-top: 11px;
+        padding: 12px;
+        overflow-y: hidden;
+    }
+
+    .profile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .user-img{
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+    }
+
+    .bio{
+        padding: 10px;
+        text-align: center;
+        font-family: Georgia, Times, 'Times New Roman', serif
+    }
+
+    .follower-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .update{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .follow-link{
+        text-align: center;
+    }
+
+    .white_button{
+        border: none;
+        margin-bottom: 10px;
+        cursor: pointer;
+        padding: 10px 20px;
+        border-radius: 4px;
+        background-color: rgb(220, 220, 220);
+        color: black;
+    }
+}
