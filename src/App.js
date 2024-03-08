@@ -1,8 +1,8 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import RequireUser from './components/RequireUser';
-import RequireLogin from './components/RequireLogin';
+import RequireUser from './utils/RequireUser';
+import RequireLogin from './utils/RequireLogin';
 import toast, { Toaster } from 'react-hot-toast';
 import LoadingBar from 'react-top-loading-bar'
 import { useSelector } from 'react-redux';
