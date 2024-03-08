@@ -47,9 +47,9 @@ const Signup = () => {
   };
 
   return (
-    <section className="mt-10">
+    <section className="mt-10 flex justify-center">
       <div className="container h-full px-6 py-24">
-        <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
+        <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-center">
           <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
             <img
               src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
@@ -91,7 +91,7 @@ const Signup = () => {
               ></TEInput>
 
                 <button
-                  className="absolute right-5 top-[37%] transform -translate-y-1/2 focus:outline-none"
+                  className="absolute right-[15px] top-[36.7%] transform -translate-y-1/2 focus:outline-none"
                   onClick={togglePasswordVisibility}
                 >
                   {showPassword ? "Hide" : "Show"}
@@ -108,7 +108,7 @@ const Signup = () => {
               ></TEInput>
 
               <button
-                className="absolute right-5 top-[53%] transform -translate-y-1/2 focus:outline-none"
+                className="absolute right-[15px] top-[52.5%] transform -translate-y-1/2 focus:outline-none"
                 onClick={toggleConfirmPasswordVisibility}
               >
                 {showConfirmPassword ? "Hide" : "Show"}
