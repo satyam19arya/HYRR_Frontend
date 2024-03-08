@@ -47,8 +47,8 @@ const Signup = () => {
   };
 
   return (
-    <section className="lg:mt-10 flex justify-center">
-      <div className="container h-full px-6 py-8 lg:py-24">
+    <section className="lg:mt-20 flex justify-center">
+      <div className="container h-full px-6 py-8 lg:py-18">
         <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-center">
           <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
             <img
