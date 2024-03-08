@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import Navbar from '../components/Navbar';
 import { Outlet } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { getMyInfo } from "../redux/slices/appConfigSlice";
+import { getMyProfile } from "../redux/slices/appConfigSlice";
 
 const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getMyInfo());
+    dispatch(getMyProfile());
     // eslint-disable-next-line
   }, [])
   

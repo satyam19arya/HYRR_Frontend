@@ -10,8 +10,6 @@ const Post = ({post}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  console.log(post);
-
   async function handlePostLiked() {
     dispatch(likeAndUnlikePost({
         postId: post._id

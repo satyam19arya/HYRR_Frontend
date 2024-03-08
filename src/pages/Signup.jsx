@@ -91,6 +91,7 @@ const Signup = () => {
               ></TEInput>
 
                 <button
+                  type='button'
                   className="absolute right-[15px] top-[36.7%] transform -translate-y-1/2 focus:outline-none"
                   onClick={togglePasswordVisibility}
                 >
@@ -108,6 +109,7 @@ const Signup = () => {
               ></TEInput>
 
               <button
+                type='button'
                 className="absolute right-[15px] top-[52.5%] transform -translate-y-1/2 focus:outline-none"
                 onClick={toggleConfirmPasswordVisibility}
               >

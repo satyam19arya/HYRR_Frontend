@@ -63,6 +63,7 @@ const Login = () => {
               ></TEInput>
 
                 <button
+                  type='button'
                   className="absolute right-[16px] top-[44%] transform -translate-y-1/2 focus:outline-none"
                   onClick={togglePasswordVisibility}
                 >

@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { axiosClient } from "../../utils/axiosClient";
 
-export const getMyInfo = createAsyncThunk("user/getMyInfo", async () => {
+export const getMyProfile = createAsyncThunk("user/getMyProfile", async () => {
     try{
-        const response = await axiosClient.get('/api/user/getMyInfo')
+        const response = await axiosClient.get('/api/user/getMyProfile')
         return response.result;
     }catch(e){
         return Promise.reject(e);
@@ -36,7 +36,7 @@ const appConfigSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-        .addCase(getMyInfo.fulfilled, (state, action) => {
+        .addCase(getMyProfile.fulfilled, (state, action) => {
             state.myProfile = action.payload.user;
         })
         .addCase(updateMyProfile.fulfilled, (state, action) => {
