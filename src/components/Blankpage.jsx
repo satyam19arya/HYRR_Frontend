@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { axiosClient } from "../utils/axiosClient";
+import React, { useEffect } from 'react';
 import Post from './Post';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllPosts } from '../redux/slices/feedSlice.js';
+import Spinner from './Spinner';
 
 const Blankpage = () => {
-    const [feedData, setFeedData] = useState([]);
-    
-    useEffect(() => {
-        const fetchFeedData = async () => {
-          try {
-            const response = await axiosClient.get('/api/posts/posts');
-            setFeedData(response.result.posts);
-          } catch (error) {
-            console.error('Error fetching feed data:', error);
-          }
-        };
+  const dispatch = useDispatch();
+  const allPosts = useSelector(state => state.feedDataReducer.allPosts)
+  const allPosts_status = useSelector(state => state.feedDataReducer.allPosts_status)
 
-        fetchFeedData();
-      }, []);
+  console.log(allPosts)
+
+  useEffect(() => {
+    dispatch(getAllPosts()); // eslint-disable-next-line
+  }, [])
+
+  if(allPosts_status === 'loading') {
+      return <Spinner />
+  }
 
   return (
     <div>
-        { feedData?.map((post) => <Post key={post._id} post={post} />) }
+        { allPosts?.posts?.map((post) => <Post key={post._id} post={post} />) }
     </div>
   )
 }

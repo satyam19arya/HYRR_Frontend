@@ -5,14 +5,20 @@ import BlankPage from './Blankpage.jsx';
 import Follower from './Follower';
 import {useSelector, useDispatch} from 'react-redux';
 import { getFeedData } from '../redux/slices/feedSlice.js';
+import Spinner from './Spinner';
 
 const Feed = () => {
   const dispatch = useDispatch();
   const feedData = useSelector(state => state.feedDataReducer.feedData)
+  const feedData_status = useSelector(state => state.feedDataReducer.feedData_status)
 
   useEffect(() => {
-    dispatch(getFeedData());
-  }, [dispatch])  
+    dispatch(getFeedData()); // eslint-disable-next-line
+  }, []) 
+
+  if(feedData_status === 'loading') {
+      return <Spinner />
+  }
 
   return (
     <div className="Feed">
@@ -23,6 +29,9 @@ const Feed = () => {
           ) : (
             feedData?.posts?.map((post) => <Post key={post._id} post={post} />)
           )}
+          <div className='p-4 text-center'>
+            <p>You're all caught up</p>
+          </div>
         </div>
         <div className="right-part">
           <div className="following">
@@ -35,7 +44,6 @@ const Feed = () => {
           </div>
         </div>
       </div>
-
     </div>
   )
 }

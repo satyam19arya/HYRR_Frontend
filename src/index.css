@@ -26,40 +26,6 @@ body{
   margin-inline: auto;
 }
 
-.red_button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 9px 11px;
-  color: white;
-  background-color: rgb(230, 97, 97);
-  border:none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition:all 100ms ease-out;
-}
-
-.red_button:hover{
-  background-color: rgb(225, 60, 60);
-}
-
-.blue_button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 9px 11px;
-  color: white;
-  background-color: rgb(93, 175, 233);
-  border:none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition:all 100ms ease-out;
-}
-
-.blue_button:hover{
-  background-color:  rgb(53, 164, 244);
-}
-
 h1, h2, h3, h4, h5, h6 {
   color: #212121;
 }
@@ -71,8 +37,4 @@ h5{
 p{
   color: #555;
   font-size: 0.9rem;
-}
-
-.hover-link {
-  cursor: pointer;
 }

@@ -46,4 +46,4 @@ const appConfigSlice = createSlice({
 })
 
 export default appConfigSlice.reducer;
-export const {setLoading, showToast} = appConfigSlice.actions; 
+export const {setLoading, showToast} = appConfigSlice.actions;

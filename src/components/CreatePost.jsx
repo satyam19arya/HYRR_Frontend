@@ -62,7 +62,13 @@ const CreatePost = () => {
             </label>
             <input className='inputImg' id="inputImg" type="file" accept="image/*" onChange={handleImageChange}/>
           </div>
-            <button className='blue_button' onClick={hanldePostSubmit}>Post</button>
+            <button
+              type='button'
+              className='inline-block rounded bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white'
+              onClick={hanldePostSubmit}
+            >
+              Post
+            </button>
         </div>
         
       </div>

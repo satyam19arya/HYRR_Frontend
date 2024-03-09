@@ -12,12 +12,12 @@ const Navbar = () => {
   return (
     <div className="Navbar">
       <div className="containerd">
-          <h2 className= "banner hover-link" onClick={() => navigate('/')}>MediaADO</h2>
+          <h2 className= "banner cursor-pointer" onClick={() => navigate('/')}>MediaADO</h2>
           <div className="right-side">
-            <div className="profile hover-link" onClick={() => navigate('/')}>
+            <div className="profile cursor-pointer" onClick={() => navigate('/')}>
               <AiOutlineHome style={{fontSize: "28px", color: "rgb(66, 66, 115)"}}/>
             </div>
-            <div className="profile hover-link" onClick={() => navigate(`/profile/${myProfile?._id}`)}>
+            <div className="profile cursor-pointer" onClick={() => navigate(`/profile/${myProfile?._id}`)}>
               <Avatar src={myProfile?.avatar?.url}/>
             </div>
           </div>

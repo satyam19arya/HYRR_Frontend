@@ -14,7 +14,7 @@ const Post = ({post}) => {
     dispatch(likeAndUnlikePost({
         postId: post._id
     }))
-}
+  }
 
   return (
     <div className="Post">
