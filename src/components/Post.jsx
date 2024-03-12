@@ -3,17 +3,12 @@ import './Post.scss';
 import Avatar from './Avatar';
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useNavigate } from "react-router";
-import { useDispatch } from 'react-redux';
-import { likeAndUnlikePost } from "../redux/slices/postsSlice";
 
-const Post = ({post}) => {   
-  const dispatch = useDispatch();
+const Post = ({post, onLike}) => {   
   const navigate = useNavigate();
 
   async function handlePostLiked() {
-    dispatch(likeAndUnlikePost({
-        postId: post._id
-    }))
+    onLike(post._id);
   }
 
   return (

@@ -14,6 +14,7 @@ import Home from './pages/Home'
 import Feed from './components/Feed'
 import Profile from './components/Profile'
 import UpdateProfile from './components/UpdateProfile.jsx'
+import Error from './components/Error.jsx'
 
 export const TOAST_SUCCESS = "toast_success";
 export const TOAST_FAILURE = "toast_failure";
@@ -50,15 +51,17 @@ function App() {
       <Routes>
         <Route element={<RequireUser/>}>
             <Route element={<Home/>}>
-               <Route path='/' element = {<Feed/>}/>
-               <Route path='/profile/:userId' element = {<Profile/>}/>
-               <Route path='/updateProfile' element = {<UpdateProfile/>}/>
+              <Route path='/' element = {<Feed/>}/>
+              <Route path='/profile/:userId' element = {<Profile/>}/>
+              <Route path='/updateProfile' element = {<UpdateProfile/>}/>
+              <Route path="*" element={<Error/>}/>
             </Route>
         </Route>
         <Route element={<RequireLogin/>}>
             <Route path="/otp" element={<Otp/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/signup" element={<Signup/>}/>
+            <Route path="*" element={<Error/>}/>
         </Route>
       </Routes>
     </div>

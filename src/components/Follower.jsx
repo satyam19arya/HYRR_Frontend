@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Avatar from './Avatar';
 import './Follower.scss';
-import { useSelector, useDispatch } from "react-redux";
-import { followAndUnfollowUser } from "../redux/slices/feedSlice.js";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 
-const Follower = ({user}) => {
-  const dispatch = useDispatch();
+const Follower = ({user, onFollow}) => {
   const navigate = useNavigate();
   const feedData = useSelector((state) => state.feedDataReducer.feedData);
   const [isFollowing, setIsFollowing] = useState();
@@ -15,10 +13,14 @@ const Follower = ({user}) => {
     setIsFollowing(feedData.followings.find((item) => item._id === user._id)); // eslint-disable-next-line
 }, [feedData]);
 
-function handleUserFollow () {
-  dispatch(followAndUnfollowUser({ 
-      userIdToFollow: user._id 
-  }));
+// function handleUserFollow () {
+//   dispatch(followAndUnfollowUser({ 
+//       userIdToFollow: user._id 
+//   }));
+// }
+
+function handleUserFollow() {
+  onFollow(user._id);
 }
 
   return (

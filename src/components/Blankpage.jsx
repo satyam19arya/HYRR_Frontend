@@ -2,26 +2,29 @@ import React, { useEffect } from 'react';
 import Post from './Post';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllPosts } from '../redux/slices/feedSlice.js';
-import Spinner from './Spinner';
+import { likeAndUnlikePost } from "../redux/slices/postsSlice";
 
 const Blankpage = () => {
   const dispatch = useDispatch();
   const allPosts = useSelector(state => state.feedDataReducer.allPosts)
-  const allPosts_status = useSelector(state => state.feedDataReducer.allPosts_status)
-
-  console.log(allPosts)
 
   useEffect(() => {
     dispatch(getAllPosts()); // eslint-disable-next-line
-  }, [])
+  }, [dispatch])
 
-  if(allPosts_status === 'loading') {
-      return <Spinner />
+  const handlePostLiked = (postId) => {
+    dispatch(likeAndUnlikePost({ postId }))
+      .then(() => {
+        dispatch(getAllPosts());
+      })
+      .catch(error => {
+        console.error("Error occurred while liking/unliking post:", error);
+      });
   }
 
   return (
     <div>
-        { allPosts?.posts?.map((post) => <Post key={post._id} post={post} />) }
+        { allPosts?.posts?.map((post) => <Post key={post._id} post={post} onLike={handlePostLiked}/>) }
     </div>
   )
 }
